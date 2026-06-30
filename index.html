@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Turismo Dentário · Dental Face Lisboa — Plano de Trabalho</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pine:#1c3a32;
+    --pine-deep:#122520;
+    --pine-soft:#2d5448;
+    --sage:#7fa494;
+    --sage-deep:#5a8474;
+    --mist:#e8efe9;
+    --paper:#fbfaf7;
+    --surface:#ffffff;
+    --ink:#16201c;
+    --ink-soft:#39463f;
+    --muted:#646f69;
+    --line:#dde4df;
+    --line-soft:#eef1ee;
+    --gold:#b08d4a;
+    --gold-soft:#f0e7d4;
+    --flag:#9a3c30;
+    --flag-bg:#f8ece9;
+    --ok:#3a7a5b;
+
+    --z-sticky:100;
+
+    --r-sm:8px; --r-md:12px; --r-lg:18px;
+    --measure:68ch;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:var(--paper);color:var(--ink);
+    line-height:1.6;font-size:16px;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+  p{max-width:var(--measure);text-wrap:pretty}
+
+  /* ---------- TOP NAV ---------- */
+  nav.toc{
+    position:sticky;top:0;z-index:var(--z-sticky);
+    background:rgba(251,250,247,.86);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .toc-inner{display:flex;align-items:center;gap:10px;height:54px;overflow-x:auto;scrollbar-width:none}
+  .toc-inner::-webkit-scrollbar{display:none}
+  .toc-brand{font-family:'Fraunces',serif;font-weight:600;font-size:16px;color:var(--pine-deep);white-space:nowrap;margin-right:6px}
+  .toc-brand b{color:var(--gold)}
+  .toc a{font-size:12.5px;color:var(--muted);text-decoration:none;white-space:nowrap;padding:5px 9px;border-radius:6px;transition:color .15s,background .15s}
+  .toc a:hover,.toc a:focus-visible{color:var(--pine);background:var(--mist)}
+  .toc a:focus-visible{outline:2px solid var(--pine);outline-offset:1px}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    background:
+      radial-gradient(120% 90% at 100% 0%, rgba(127,164,148,.16), transparent 55%),
+      linear-gradient(158deg,var(--pine-deep),var(--pine) 72%);
+    color:var(--paper);padding:clamp(48px,9vw,80px) 0 clamp(40px,7vw,64px);
+    position:relative;overflow:hidden;
+  }
+  .hero .ring{position:absolute;border:1px solid rgba(255,255,255,.10);border-radius:50%;pointer-events:none}
+  .hero .ring.r1{width:min(46vw,440px);aspect-ratio:1;right:-7%;top:-18%}
+  .hero .ring.r2{width:min(28vw,260px);aspect-ratio:1;right:6%;top:24%}
+  .kicker{font-size:13px;letter-spacing:.02em;color:var(--sage);font-weight:500;margin-bottom:18px;display:flex;align-items:center;gap:9px}
+  .kicker::before{content:"";width:24px;height:1px;background:var(--sage-deep)}
+  .hero h1{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(33px,6vw,60px);line-height:1.02;letter-spacing:-.02em;
+    margin-bottom:20px;max-width:16ch;text-wrap:balance;
+  }
+  .hero .stand{font-size:clamp(16px,2.4vw,19px);color:rgba(251,250,247,.85);max-width:54ch;line-height:1.55}
+  .hero .stand b{color:#fff;font-weight:600}
+  .premise{
+    margin-top:34px;padding:20px 22px;border-radius:var(--r-md);
+    background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+    max-width:60ch;
+  }
+  .premise span{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;font-weight:600}
+  .premise p{font-size:14.5px;color:rgba(251,250,247,.9);max-width:none}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:clamp(44px,7vw,72px) 0;border-bottom:1px solid var(--line)}
+  .label{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:14px}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(25px,3.6vw,34px);line-height:1.1;letter-spacing:-.015em;color:var(--pine-deep);margin-bottom:14px;text-wrap:balance}
+  .intro{color:var(--ink-soft);font-size:clamp(15px,1.7vw,17px);margin-bottom:30px}
+  h3{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--pine);margin:0 0 6px;letter-spacing:-.01em}
+  h4{font-size:15px;font-weight:600;color:var(--pine-deep)}
+  a.inl{color:var(--pine-soft);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+
+  /* ---------- THE DEAL / MODEL ---------- */
+  .model-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+  @media(max-width:680px){.model-grid{grid-template-columns:1fr}}
+  .role{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px}
+  .role .tag{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;padding:4px 11px;border-radius:20px;margin-bottom:14px}
+  .role.clinic .tag{background:var(--mist);color:var(--pine)}
+  .role.you .tag{background:var(--flag-bg);color:var(--flag)}
+  .role ul{list-style:none;margin-top:4px}
+  .role li{font-size:14px;color:var(--ink-soft);padding:7px 0 7px 22px;position:relative;border-top:1px solid var(--line-soft)}
+  .role li:first-child{border-top:none}
+  .role li::before{content:"";position:absolute;left:2px;top:15px;width:7px;height:7px;border-radius:2px}
+  .role.clinic li::before{background:var(--pine-soft)}
+  .role.you li::before{background:var(--flag)}
+
+  .moneyflow{margin-top:26px;background:var(--pine-deep);border-radius:var(--r-lg);padding:26px 22px;color:var(--paper)}
+  .moneyflow h3{color:#fff;margin-bottom:4px}
+  .moneyflow > p{color:var(--sage);font-size:13.5px;margin-bottom:20px;max-width:none}
+  .mf-row{display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+  .mf-node{flex:1;min-width:130px;text-align:center;padding:4px}
+  .mf-node .amt{font-family:'Fraunces',serif;font-size:21px;font-weight:600;color:#fff;line-height:1.1}
+  .mf-node .who{font-size:12px;color:var(--sage);margin-top:5px;line-height:1.35}
+  .mf-arrow{display:flex;align-items:center;justify-content:center;color:var(--sage-deep);font-size:18px;min-width:24px}
+  @media(max-width:560px){.mf-arrow{transform:rotate(90deg);min-height:24px}}
+  .mf-foot{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.13);font-size:12.5px;color:rgba(251,250,247,.72)}
+
+  /* ---------- COMPETITOR TABLES ---------- */
+  .scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -4px;padding:0 4px}
+  table{width:100%;min-width:560px;border-collapse:collapse;font-size:13.5px;background:var(--surface);border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line)}
+  caption{text-align:left;font-size:13px;color:var(--muted);margin-bottom:9px;caption-side:top}
+  th{background:var(--pine);color:var(--paper);text-align:left;padding:11px 13px;font-weight:600;font-size:12.5px;vertical-align:bottom}
+  td{padding:11px 13px;border-top:1px solid var(--line-soft);vertical-align:top;color:var(--ink-soft)}
+  td strong{color:var(--ink);font-weight:600}
+  tbody tr:nth-child(even) td{background:#fcfdfc}
+  .tier-tag{display:inline-block;font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:5px;white-space:nowrap}
+  .t-direct{background:var(--mist);color:var(--pine)}
+  .t-broker{background:var(--gold-soft);color:var(--gold)}
+  .num{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+  /* ---------- MARKET MAP ---------- */
+  .mkt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:6px}
+  .mkt{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:18px 18px 16px}
+  .mkt .top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+  .mkt .flagico{font-size:26px;line-height:1}
+  .mkt .name{font-family:'Fraunces',serif;font-weight:600;font-size:17px;color:var(--pine-deep)}
+  .mkt .sub{font-size:11.5px;color:var(--muted)}
+  .mkt p{font-size:13px;color:var(--ink-soft);max-width:none;margin-bottom:9px}
+  .mkt .rivals{font-size:11.5px;color:var(--muted);padding-top:9px;border-top:1px solid var(--line-soft)}
+  .mkt .rivals b{color:var(--pine);font-weight:600}
+
+  /* ---------- DEEP COMPETITOR CARDS ---------- */
+  .deep{display:flex;flex-direction:column;gap:14px;margin-top:6px}
+  .comp{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px 22px}
+  .comp-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:4px}
+  .comp-head .nm{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--pine-deep)}
+  .comp-head .geo{font-size:12px;color:var(--muted)}
+  .comp-body{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+  @media(max-width:600px){.comp-body{grid-template-columns:1fr}}
+  .col-good h5,.col-bad h5{font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:600;margin-bottom:6px}
+  .col-good h5{color:var(--ok)} .col-bad h5{color:var(--flag)}
+  .col-good ul,.col-bad ul{list-style:none}
+  .col-good li,.col-bad li{font-size:13px;color:var(--ink-soft);padding:3px 0 3px 16px;position:relative}
+  .col-good li::before{content:"+";position:absolute;left:0;color:var(--ok);font-weight:700}
+  .col-bad li::before{content:"–";position:absolute;left:0;color:var(--flag);font-weight:700}
+  .takeaway{margin-top:14px;padding:11px 14px;background:var(--mist);border-radius:var(--r-sm);font-size:13px;color:var(--pine-deep)}
+  .takeaway b{font-weight:600}
+
+  /* ---------- SWOT ---------- */
+  .swot{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:680px){.swot{grid-template-columns:1fr}}
+  .quad{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:18px 18px 14px}
+  .quad h4{font-size:12px;letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px}
+  .quad ul{list-style:none}
+  .quad li{font-size:13.5px;color:var(--ink-soft);padding:5px 0 5px 16px;position:relative}
+  .quad li::before{content:"";position:absolute;left:0;top:12px;width:5px;height:5px;border-radius:50%}
+  .q-s h4{color:var(--ok)} .q-s li::before{background:var(--ok)}
+  .q-w h4{color:var(--flag)} .q-w li::before{background:var(--flag)}
+  .q-o h4{color:var(--pine-soft)} .q-o li::before{background:var(--pine-soft)}
+  .q-t h4{color:var(--gold)} .q-t li::before{background:var(--gold)}
+
+  /* ---------- JOURNEYS ---------- */
+  .j-switch{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+  .j-pill{font-size:13px;font-weight:600;padding:8px 16px;border-radius:22px;border:1px solid var(--line);background:var(--surface);color:var(--ink-soft)}
+  .j-pill.a{border-color:var(--pine);background:var(--pine);color:#fff}
+  .j-pill.b{border-color:var(--gold);background:var(--gold-soft);color:var(--gold)}
+  .journey{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px;margin-bottom:16px}
+  .journey > .jt{display:flex;align-items:center;gap:9px;font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--pine-deep);margin-bottom:4px}
+  .jdot{width:11px;height:11px;border-radius:50%;flex:none}
+  .journey > .jsub{font-size:13px;color:var(--muted);margin-bottom:18px}
+  .track{display:flex;align-items:stretch;gap:0;flex-wrap:wrap}
+  .stop{flex:1;min-width:104px;text-align:center;padding:2px}
+  .stop .ring2{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-weight:600;font-size:13px;color:#fff;position:relative}
+  .stop .lbl{font-size:12.5px;font-weight:600;color:var(--pine-deep);line-height:1.25;margin-bottom:2px}
+  .stop .det{font-size:11px;color:var(--muted);line-height:1.3}
+  .seg{display:flex;align-items:center;justify-content:center;color:var(--sage);min-width:18px}
+  @media(max-width:620px){.seg{transform:rotate(90deg);min-height:18px}}
+  .free-tag{position:absolute;top:-8px;right:-12px;background:var(--ok);color:#fff;font-size:8.5px;font-weight:700;padding:2px 6px;border-radius:9px;letter-spacing:.03em}
+
+  /* ---------- PACKAGES ---------- */
+  .pgrp{margin-bottom:26px}
+  .pgrp-h{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:var(--pine);margin-bottom:12px}
+  .pk-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+  .pk{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px 18px;display:flex;flex-direction:column}
+  .pk.star{border-color:var(--pine);box-shadow:0 10px 30px -12px rgba(28,58,50,.3);position:relative}
+  .pk.star::after{content:"mais procurado";position:absolute;top:-9px;left:18px;background:var(--gold);color:#fff;font-size:9px;font-weight:600;letter-spacing:.05em;padding:3px 9px;border-radius:9px}
+  .pk .tn{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .pk .pr{font-family:'Fraunces',serif;font-size:25px;font-weight:600;color:var(--pine-deep);margin:7px 0 1px;line-height:1}
+  .pk .pr small{font-size:12px;color:var(--muted);font-weight:400}
+  .pk .dur{font-size:12px;color:var(--sage-deep);font-weight:600;margin-bottom:13px}
+  .pk ul{list-style:none;flex:1}
+  .pk li{font-size:12.5px;color:var(--ink-soft);padding:4px 0 4px 18px;position:relative}
+  .pk li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+  .pk li.x{color:var(--muted)} .pk li.x::before{content:"–";color:var(--line)}
+  .ph-note{font-size:12px;color:var(--muted);font-style:italic;margin-top:14px;padding:10px 14px;background:var(--gold-soft);border-radius:var(--r-sm)}
+
+  /* ---------- COMMS ---------- */
+  .call-hook{background:var(--pine-deep);color:var(--paper);border-radius:var(--r-lg);padding:26px;margin-bottom:24px}
+  .call-hook h3{color:#fff;font-size:21px;margin-bottom:8px}
+  .call-hook p{color:rgba(251,250,247,.86);font-size:14.5px;max-width:60ch;margin-bottom:6px}
+  .call-hook .sml{color:var(--sage);font-size:12.5px}
+  .chan-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:8px}
+  .chan{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:15px 16px}
+  .chan h4{font-size:14px;color:var(--pine-deep);margin-bottom:4px}
+  .chan p{font-size:12.5px;color:var(--ink-soft);max-width:none}
+
+  /* ---------- COSTS / BILLING ---------- */
+  .cost-table th:last-child,.cost-table td:last-child{text-align:right}
+  .badge-rec{font-size:10px;font-weight:600;padding:1px 7px;border-radius:5px;background:var(--mist);color:var(--pine)}
+  .badge-1x{font-size:10px;font-weight:600;padding:1px 7px;border-radius:5px;background:var(--gold-soft);color:var(--gold)}
+
+  /* ---------- RISKS ---------- */
+  .risk-wrap{background:var(--flag-bg)}
+  .risk-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:6px}
+  @media(max-width:680px){.risk-grid{grid-template-columns:1fr}}
+  .risk{background:var(--surface);border:1px solid #ecd4cf;border-radius:var(--r-md);padding:16px 17px}
+  .risk h4{font-size:14.5px;color:var(--flag);margin-bottom:5px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .risk h4 .sev{font-size:10px;background:var(--flag-bg);color:var(--flag);padding:1px 7px;border-radius:5px;font-weight:600;letter-spacing:.04em}
+  .risk p{font-size:13px;color:var(--ink-soft);max-width:none;margin-bottom:8px}
+  .risk .ask{font-size:12px;color:var(--pine);background:var(--mist);padding:7px 10px;border-radius:6px}
+  .risk .ask b{font-weight:600}
+
+  /* ---------- EXTERNAL HELP ---------- */
+  .help-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:6px}
+  .help{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:16px}
+  .help h4{font-size:14px;color:var(--pine-deep);margin-bottom:3px}
+  .help .when{font-size:11px;color:var(--gold);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px}
+  .help p{font-size:12.5px;color:var(--ink-soft);max-width:none}
+
+  /* ---------- STEPS ---------- */
+  .steps{margin-top:8px}
+  .step-i{display:flex;gap:16px}
+  .rail{display:flex;flex-direction:column;align-items:center;flex:none}
+  .node{width:32px;height:32px;border-radius:50%;background:var(--pine);color:#fff;font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .vline{width:2px;flex:1;background:var(--line);margin:3px 0}
+  .step-i:last-child .vline{display:none}
+  .step-body{padding-bottom:22px;flex:1}
+  .step-body h4{font-size:15.5px;color:var(--pine-deep);margin-bottom:3px}
+  .step-body p{font-size:13.5px;color:var(--muted);max-width:none}
+  .owner{font-size:10.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:2px 9px;border-radius:20px;display:inline-block;margin-top:7px}
+  .o-d{background:var(--mist);color:var(--pine)}
+  .o-y{background:var(--flag-bg);color:var(--flag)}
+  .o-b{background:var(--gold-soft);color:var(--gold)}
+
+  /* ---------- CRITIQUE CALLOUT ---------- */
+  .critique{background:var(--pine);color:var(--paper);border-radius:var(--r-lg);padding:26px clamp(20px,4vw,30px);margin-top:8px}
+  .critique h3{color:var(--sage);font-size:14px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+  .critique .q{font-size:15px;color:#fff;font-weight:600;margin:18px 0 5px;font-family:'Fraunces',serif}
+  .critique .q:first-of-type{margin-top:0}
+  .critique p{color:rgba(251,250,247,.84);font-size:14px;max-width:64ch}
+
+  footer{padding:30px 0 56px;text-align:center}
+  .legend{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:14px;font-size:12px;color:var(--muted)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+  footer .fin{font-size:12px;color:var(--muted)}
+
+  @media print{
+    nav.toc{display:none}
+    body{background:#fff;font-size:12px}
+    section{break-inside:avoid;page-break-inside:avoid;padding:22px 0}
+    .hero .ring{display:none}
+    .moneyflow,.call-hook,.critique,.risk-wrap{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<nav class="toc" aria-label="Secções">
+  <div class="wrap"><div class="toc-inner">
+    <span class="toc-brand">Dental Face · <b>Turismo</b></span>
+    <a href="#modelo">O modelo</a>
+    <a href="#dinheiro">Como ganho</a>
+    <a href="#mercados">Mercados</a>
+    <a href="#rivais">Concorrência</a>
+    <a href="#swot">SWOT</a>
+    <a href="#jornadas">Jornadas</a>
+    <a href="#pacotes">Pacotes</a>
+    <a href="#comunicar">Comunicação</a>
+    <a href="#custos">Custos</a>
+    <a href="#externos">Ajuda externa</a>
+    <a href="#riscos">Riscos</a>
+    <a href="#passos">Passos</a>
+  </div></div>
+</nav>
+
+<header class="hero">
+  <span class="ring r1"></span><span class="ring r2"></span>
+  <div class="wrap">
+    <div class="kicker">Plano de trabalho · para discutir, não para fechar</div>
+    <h1>Trazer pacientes a Lisboa para tratar o sorriso</h1>
+    <p class="stand">A mesma lógica do transplante capilar na Turquia, aplicada à dentária: tratamento de topo em Portugal, a metade do preço dos EUA, França ou Suíça. A Dental Face trata; nós tratamos de tudo o resto, <b>e ficamos com margem por cada paciente que entra.</b></p>
+    <div class="premise">
+      <span>Em uma frase</span>
+      <p>Não vendemos "dentista barato". Vendemos a um americano ou suíço a confiança de que pode voar até Lisboa, ser tratado por um médico de renome, e poupar milhares, sem o risco de uma aposta às cegas.</p>
+    </div>
+  </div>
+</header>
+
+<!-- ========== 1. THE MODEL ========== -->
+<section id="modelo"><div class="wrap">
+  <div class="label">01 — O modelo</div>
+  <h2>Quem faz o quê</h2>
+  <p class="intro">Antes de qualquer marketing ou website, é isto que tem de estar claro entre nós os dois. Sou um canal clínica-direto: o paciente fala diretamente com a Dental Face, não com um intermediário que nunca viu o cirurgião. Eu trato de tudo à volta do tratamento.</p>
+
+  <div class="model-grid">
+    <div class="role clinic">
+      <span class="tag">A clínica (o teu lado)</span>
+      <ul>
+        <li>Avalia o caso à distância e dá o plano clínico</li>
+        <li>Define o preço do tratamento (honorário fica contigo)</li>
+        <li>Executa o tratamento e a garantia clínica</li>
+        <li>Faz o follow-up médico (vídeo ou presencial)</li>
+        <li>Diz "não" a casos que não são seguros à distância</li>
+      </ul>
+    </div>
+    <div class="role you">
+      <span class="tag">A operação (o meu lado)</span>
+      <ul>
+        <li>Capta e qualifica os pacientes (site, anúncios, chamada)</li>
+        <li>Trata da logística: hotel, transfers, itinerário</li>
+        <li>Constrói e gere o site, o assistente, a automação</li>
+        <li>Coordena a comunicação entre paciente e clínica</li>
+        <li>Acompanha o paciente do primeiro email até ao regresso</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- ========== 2. HOW I MAKE MONEY ========== -->
+<section id="dinheiro"><div class="wrap">
+  <div class="label">02 — Como ganho dinheiro</div>
+  <h2>De onde vem a minha margem</h2>
+  <p class="intro">Esta é a pergunta que eu próprio tenho de responder antes de avançar. Há dois modelos possíveis, e acho que o segundo é o mais limpo para nós.</p>
+
+  <div class="model-grid">
+    <div class="role clinic">
+      <span class="tag">Opção A · Comissão por paciente</span>
+      <ul>
+        <li>A clínica paga-me uma fatia (ex.: 15–20%) por cada paciente tratado que eu trouxe</li>
+        <li>Simples de explicar, mas obriga a confiança total no registo</li>
+        <li>Em alguns países, comissões médicas levantam questões legais. A confirmar com advogado.</li>
+      </ul>
+    </div>
+    <div class="role you">
+      <span class="tag">Opção B · Eu vendo o pacote (preferida)</span>
+      <ul>
+        <li>O preço do médico é o preço do médico. Eu construo o pacote por cima.</li>
+        <li>A minha margem está na camada de viagem e coordenação: hotel, transfers, taxa de gestão.</li>
+        <li>Não toco no dinheiro clínico nem preciso de escrow. Menos risco legal.</li>
+        <li>É o modelo que os facilitadores sérios usam.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="moneyflow">
+    <h3>Como o dinheiro flui (Opção B, exemplo ilustrativo)</h3>
+    <p>Um caso de implantes "Complete". Números inventados só para vermos a mecânica.</p>
+    <div class="mf-row">
+      <div class="mf-node"><div class="amt">€14.500</div><div class="who">paciente paga<br>o pacote total</div></div>
+      <div class="mf-arrow">→</div>
+      <div class="mf-node"><div class="amt">€11.000</div><div class="who">honorário clínico<br>→ Dental Face</div></div>
+      <div class="mf-arrow">→</div>
+      <div class="mf-node"><div class="amt">€2.200</div><div class="who">hotel + transfers<br>(custo real)</div></div>
+      <div class="mf-arrow">→</div>
+      <div class="mf-node"><div class="amt">€1.300</div><div class="who">fica comigo<br>(coordenação)</div></div>
+    </div>
+    <div class="mf-foot">Como controlamos isto: cada paciente entra com um código de origem único. Um registo partilhado (uma folha ou um pequeno CRM) regista quem entrou por mim, o estado do caso, e o valor. A clínica vê os casos que tratou; eu vejo os que trouxe. Reconciliamos uma vez por mês. Sem isto, não há negócio — a rastreabilidade é o que protege os dois lados.</div>
+  </div>
+</div></section>
+
+<!-- ========== 3. MARKET MAP ========== -->
+<section id="mercados"><div class="wrap">
+  <div class="label">03 — Os grandes mercados</div>
+  <h2>Quem viaja, para onde, e contra quem competimos</h2>
+  <p class="intro">O mercado dos EUA sozinho valia 634 milhões de dólares em 2024 e projeta-se que chegue a 3,2 mil milhões em 2033. A procura existe e está a crescer depressa. A questão é em que mercado nos posicionamos e o que a concorrência já lá faz.</p>
+
+  <div class="mkt-grid">
+    <div class="mkt">
+      <div class="top"><span class="flagico">🇺🇸</span><div><div class="name">Estados Unidos</div><div class="sub">maior poupança · plano dentário fraco</div></div></div>
+      <p>All-on-4 custa até 24 mil dólares nos EUA contra 8–12 mil em Portugal. Decisão movida por poupança e por falta de cobertura. Hoje vão sobretudo para o México e Costa Rica (proximidade).</p>
+      <div class="rivals">Lá já operam: <b>Dental Departures, Medical Tourism Co.</b> e o México todo. Portugal é alternativa "europeia premium", não a mais barata.</div>
+    </div>
+    <div class="mkt">
+      <div class="top"><span class="flagico">🇬🇧</span><div><div class="name">Reino Unido / Irlanda</div><div class="sub">NHS colapsado · enorme volume</div></div></div>
+      <p>Mais de 50 mil britânicos voaram para tratamento no ano passado. O NHS deixou de dar resposta. Vão em massa para a Turquia e Hungria. Mercado gigante mas muito competido e sensível ao preço.</p>
+      <div class="rivals">Lá já operam: <b>MyDentalFly, Booking Dentist, Opus Smile</b>. Difícil ganhar por preço; dá para ganhar por confiança e proximidade de voo.</div>
+    </div>
+    <div class="mkt">
+      <div class="top"><span class="flagico">🇫🇷</span><div><div class="name">França</div><div class="sub">proximidade · voos baratos</div></div></div>
+      <p>2,5h de voo, fim de semana fácil. "Soin dentaire + week-end à Lisbonne" funciona bem. Público mais sensível à estética. Menos saturado por players de turismo dentário do que o mercado britânico.</p>
+      <div class="rivals">Concorrência mais difusa. A Hungria e a Turquia também captam franceses, mas há espaço para Lisboa.</div>
+    </div>
+    <div class="mkt">
+      <div class="top"><span class="flagico">🇨🇭</span><div><div class="name">Suíça</div><div class="sub">poder de compra alto · custo local altíssimo</div></div></div>
+      <p>O custo dentário suíço é dos mais altos do mundo, o que torna a poupança enorme mesmo num pacote premium. Aqui não se vende "barato", vende-se qualidade e discrição. Público ideal para margens maiores.</p>
+      <div class="rivals">Historicamente vão para a Hungria (Sopron, na fronteira austríaca). Lisboa é destino mais aspiracional.</div>
+    </div>
+  </div>
+</div></section>
+
+
+<!-- ========== 4. DEEP COMPETITORS ========== -->
+<section id="rivais"><div class="wrap">
+  <div class="label">04 — A concorrência (em detalhe)</div>
+  <h2>Quem já faz isto, o que fazem bem, onde estão fracos</h2>
+  <p class="intro">Esta é a parte mais importante de todo o plano. Temos de entrar a saber exatamente contra quem jogamos. Há três camadas: os países rivais, as plataformas/agências, e as clínicas portuguesas que já fazem turismo dentário.</p>
+
+  <h3 style="margin-bottom:12px">Camada 1 · Os países rivais (para o paciente, a primeira decisão é o país)</h3>
+  <div class="scroll-x">
+    <table>
+      <caption>Preços indicativos por arcada / implante. A Turquia ganha em preço; o nosso argumento é confiança UE + cidade.</caption>
+      <thead><tr>
+        <th>País</th><th>Implante único</th><th>All-on-4 / arcada</th><th>Voo (de Londres)</th><th>Posição</th>
+      </tr></thead>
+      <tbody>
+        <tr><td><strong>Turquia</strong></td><td class="num">~£400</td><td class="num">desde £3.500</td><td class="num">3,5–4h</td><td>Mais barato, maior volume, fora da UE. "Turkey teeth" pesa na reputação.</td></tr>
+        <tr><td><strong>Hungria</strong></td><td class="num">£550–900</td><td class="num">£4.500–7.500</td><td class="num">2–3h</td><td>"Capital dentária da Europa", 30+ anos, UE. Budapeste forte.</td></tr>
+        <tr><td><strong>Polónia</strong></td><td class="num">£500–900</td><td class="num">£5.500–7.500</td><td class="num">2–3h</td><td>UE, formação alemã/austríaca. Cracóvia.</td></tr>
+        <tr><td><strong>Albânia</strong></td><td class="num">desde £350</td><td class="num">desde £3.000</td><td class="num">~3h</td><td>O mais barato da Europa agora. Reputação ainda a construir.</td></tr>
+        <tr><td><strong>México</strong></td><td class="num">~$4.800 (A4)</td><td class="num">—</td><td class="num">—</td><td>O destino nº1 dos EUA. Proximidade. Qualidade varia muito.</td></tr>
+        <tr style="background:var(--mist)!important"><td><strong>Portugal</strong></td><td class="num">€800–1.200</td><td class="num">€8.000–12.000</td><td class="num">2,5h</td><td><strong>Nós.</strong> Preço médio-alto da gama, UE, cidade premium, voo curto. Vendemos confiança, não o preço mais baixo.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin:30px 0 12px">Camada 2 · As plataformas e agências (como captam e como ganham)</h3>
+  <div class="scroll-x">
+    <table>
+      <thead><tr>
+        <th>Player</th><th>Tipo</th><th>Modelo de receita</th><th>O que aprendemos com eles</th>
+      </tr></thead>
+      <tbody>
+        <tr><td><strong>MyDentalFly</strong> 🇬🇧</td><td><span class="tier-tag t-broker">plataforma</span></td><td class="num">comissão s/ caso tratado</td><td>Plano clínico revisto por um dentista antes de pagar. "Nada é cobrado até o dentista confirmar." Confiança como produto.</td></tr>
+        <tr><td><strong>Booking Dentist</strong></td><td><span class="tier-tag t-broker">marketplace</span></td><td class="num">€99/mês + 15% por reserva</td><td>Placement + badge de clínica verificada + reviews iniciais. Modelo de listagem que podemos usar como canal.</td></tr>
+        <tr><td><strong>SmileJet</strong></td><td><span class="tier-tag t-broker">marketplace</span></td><td class="num">só comissão (0 fixo)</td><td>Lead já vem com histórico, raio-X, orçamento e datas. "A decisão raramente é o preço, é a confiança."</td></tr>
+        <tr><td><strong>Dental Departures</strong> 🇺🇸</td><td><span class="tier-tag t-broker">marketplace</span></td><td class="num">comissão + destaques pagos</td><td>Um dos maiores nomes, tráfego internacional forte. Categorias saturadas obrigam a placement pago.</td></tr>
+        <tr><td><strong>Medical Tourism Co.</strong> 🇺🇸</td><td><span class="tier-tag t-broker">facilitador</span></td><td class="num">pacote + margem</td><td>Auditorias on-ground às clínicas. Vende pacotes completos com voos e hotel. Modelo "middleman de confiança".</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin:30px 0 12px">Camada 3 · As clínicas portuguesas que já competem (os nossos rivais diretos)</h3>
+  <div class="deep">
+
+    <div class="comp">
+      <div class="comp-head"><span class="nm">International Advanced Dentistry (IAD)</span><span class="geo">Lisboa · concorrente direto nº1</span></div>
+      <div class="comp-body">
+        <div class="col-good"><h5>Fazem bem</h5><ul>
+          <li>Serviço de turismo desde 2015, muito rodado</li>
+          <li>Atendimento em 7 línguas, concierge interno</li>
+          <li>Sala de espera exclusiva para internacionais</li>
+          <li>Processo 100% digital comunicado</li>
+        </ul></div>
+        <div class="col-bad"><h5>Onde estão fracos</h5><ul>
+          <li>Marca densa e institucional, pouco emocional</li>
+          <li>Digital frio, sem apelo aspiracional</li>
+          <li>Comunicam o processo, não o sonho</li>
+        </ul></div>
+      </div>
+      <div class="takeaway"><b>A nossa abertura:</b> mesma estrutura, comunicação mais humana e aspiracional, com o nome do médico de renome à frente.</div>
+    </div>
+
+    <div class="comp">
+      <div class="comp-head"><span class="nm">Dental Destinations Portugal</span><span class="geo">Lisboa · agência / broker</span></div>
+      <div class="comp-body">
+        <div class="col-good"><h5>Fazem bem</h5><ul>
+          <li>Pacotes turismo com hotéis boutique e tours</li>
+          <li>Concierge e testemunhos fortes dos EUA</li>
+          <li>Posicionamento premium na cidade</li>
+        </ul></div>
+        <div class="col-bad"><h5>Onde estão fracos</h5><ul>
+          <li>Não são a clínica, são intermediários</li>
+          <li>O paciente nunca falou com o cirurgião antes de marcar</li>
+          <li>Confiança diluída entre agência e clínica</li>
+        </ul></div>
+      </div>
+      <div class="takeaway"><b>A nossa abertura:</b> somos clínica-direto. "É o médico que o trata, não é uma agência que o encaminha."</div>
+    </div>
+
+    <div class="comp">
+      <div class="comp-head"><span class="nm">Atelier do Sorriso</span><span class="geo">Algarve (Almancil) · clínica-direto</span></div>
+      <div class="comp-body">
+        <div class="col-good"><h5>Fazem bem</h5><ul>
+          <li>+600 reviews, 5 estrelas no Google</li>
+          <li>Posicionamento "recuperar na praia"</li>
+          <li>Tecnologia laser, sedação consciente</li>
+        </ul></div>
+        <div class="col-bad"><h5>Onde estão fracos</h5><ul>
+          <li>Algarve = mentalidade de férias-praia</li>
+          <li>Menos alinhado com público urbano premium</li>
+          <li>Longe de aeroporto internacional principal</li>
+        </ul></div>
+      </div>
+      <div class="takeaway"><b>A nossa abertura:</b> Lisboa cidade, não praia. Público city-break, cultura e gastronomia, que casa melhor com EUA/Suíça.</div>
+    </div>
+
+    <div class="comp">
+      <div class="comp-head"><span class="nm">Smile Porto</span><span class="geo">Porto · clínica-direto</span></div>
+      <div class="comp-body">
+        <div class="col-good"><h5>Fazem bem</h5><ul>
+          <li>Pré-avaliação remota antes da viagem</li>
+          <li>Conteúdo educativo forte (cheap vs premium)</li>
+          <li>SEO bem trabalhado em várias línguas</li>
+        </ul></div>
+        <div class="col-bad"><h5>Onde estão fracos</h5><ul>
+          <li>Porto tem menos notoriedade internacional que Lisboa</li>
+          <li>Menos ligação aérea direta de mercados-alvo</li>
+        </ul></div>
+      </div>
+      <div class="takeaway"><b>A nossa abertura:</b> Lisboa tem mais voos diretos e mais peso de marca-cidade lá fora. Copiar a pré-avaliação remota deles, fazê-la melhor.</div>
+    </div>
+
+  </div>
+</div></section>
+
+
+<!-- ========== 5. SWOT ========== -->
+<section id="swot"><div class="wrap">
+  <div class="label">05 — Análise</div>
+  <h2>SWOT da nossa operação</h2>
+  <p class="intro">Onde estamos fortes, onde estamos expostos. Útil para sabermos onde concentrar esforço e onde temos de ter cuidado.</p>
+  <div class="swot">
+    <div class="quad q-s"><h4>Forças</h4><ul>
+      <li>Médico de renome mundial como âncora de confiança</li>
+      <li>Modelo clínica-direto: paciente fala com o próprio médico</li>
+      <li>Lisboa, destino city-break premium e com voos diretos</li>
+      <li>Preço 50–70% abaixo dos EUA e Suíça</li>
+      <li>Já existe site (dentalface.pt) e direção de marca</li>
+    </ul></div>
+    <div class="quad q-w"><h4>Fraquezas</h4><ul>
+      <li>Zero reviews internacionais no arranque</li>
+      <li>Capacidade da clínica é finita (cadeiras limitadas)</li>
+      <li>Pagamentos transfronteiriços por montar</li>
+      <li>Equipa pode não dominar todas as línguas-alvo</li>
+      <li>A minha remuneração e papel ainda por fechar contigo</li>
+    </ul></div>
+    <div class="quad q-o"><h4>Oportunidades</h4><ul>
+      <li>Turismo de Portugal promove ativamente o turismo dentário</li>
+      <li>Marketplaces (~99€/mês + comissão) como canal barato de teste</li>
+      <li>Mercado EUA a crescer ~20% ao ano até 2033</li>
+      <li>NHS britânico colapsado empurra procura</li>
+      <li>Conteúdo before/after viraliza sozinho</li>
+    </ul></div>
+    <div class="quad q-t"><h4>Ameaças</h4><ul>
+      <li>Rivais com anos de reviews (IAD, Algarve, plataformas)</li>
+      <li>Turquia e Albânia competem com preço imbatível</li>
+      <li>Um único caso mau viaja depressa online ("Turkey teeth")</li>
+      <li>Responsabilidade transfronteiriça (ver secção 11)</li>
+      <li>Dependência de um só médico-âncora</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<!-- ========== 6. JOURNEYS ========== -->
+<section id="jornadas"><div class="wrap">
+  <div class="label">06 — Jornadas do paciente</div>
+  <h2>Duas formas de entrar, consoante o que o paciente quer</h2>
+  <p class="intro">Alguns querem que tratemos de tudo, voo à parte. Outros só querem o tratamento e organizam a viagem sozinhos. Desenhamos as duas, porque servem perfis diferentes e níveis de margem diferentes.</p>
+
+  <div class="j-switch">
+    <span class="j-pill a">Com hotel + transfers</span>
+    <span class="j-pill" style="border-color:var(--line)">vs</span>
+    <span class="j-pill b">Só tratamento</span>
+  </div>
+
+  <div class="journey">
+    <div class="jt"><span class="jdot" style="background:var(--pine)"></span>Jornada completa — com hotel e transfers</div>
+    <div class="jsub">Mais margem para nós, menos fricção para o paciente. O caminho que empurramos para casos de implantes de alto valor.</div>
+    <div class="track">
+      <div class="stop"><div class="ring2" style="background:var(--ok)"><span class="free-tag">grátis</span>1</div><div class="lbl">Consulta online</div><div class="det">fotos + raio-X</div></div>
+      <div class="seg">→</div>
+      <div class="stop"><div class="ring2" style="background:var(--pine)">2</div><div class="lbl">Orçamento</div><div class="det">plano + preço, 48h</div></div>
+      <div class="seg">→</div>
+      <div class="stop"><div class="ring2" style="background:var(--pine)">3</div><div class="lbl">Depósito</div><div class="det">garante a vaga</div></div>
+      <div class="seg">→</div>
+      <div class="stop"><div class="ring2" style="background:var(--pine-soft)">4</div><div class="lbl">Tratamos da viagem</div><div class="det">hotel + transfers</div></div>
+      <div class="seg">→</div>
+      <div class="stop"><div class="ring2" style="background:var(--pine)">5</div><div class="lbl">Tratamento</div><div class="det">+ dias de Lisboa</div></div>
+      <div class="seg">→</div>
+      <div class="stop"><div class="ring2" style="background:var(--pine)">6</div><div class="lbl">Follow-up</div><div class="det">vídeo ou regresso</div></div>
+    </div>
+  </div>
+
+  <div class="journey">
+    <div class="jt"><span class="jdot" style="background:var(--gold)"></span>Jornada simples — só tratamento</div>
+    <div class="jsub">O paciente trata da própria viagem. Menos margem, mas baixa a barreira e capta quem só quer o ato clínico. Bom para o público mais autónomo.</div>
+    <div class="track">
+      <div class="stop"><div class="ring2" style="background:var(--ok)"><span class="free-tag">grátis</span>1</div><div class="lbl">Consulta online</div><div class="det">fotos + raio-X</div></div>
+      <div class="seg">→</div>
+      <div class="stop"><div class="ring2" style="background:var(--gold)">2</div><div class="lbl">Orçamento</div><div class="det">só clínico, 48h</div></div>
+      <div class="seg">→</div>
+      <div class="stop"><div class="ring2" style="background:var(--gold)">3</div><div class="lbl">Depósito</div><div class="det">garante a vaga</div></div>
+      <div class="seg">→</div>
+      <div class="stop"><div class="ring2" style="background:var(--muted)">4</div><div class="lbl">Viagem própria</div><div class="det">paciente trata</div></div>
+      <div class="seg">→</div>
+      <div class="stop"><div class="ring2" style="background:var(--gold)">5</div><div class="lbl">Tratamento</div><div class="det">na clínica</div></div>
+      <div class="seg">→</div>
+      <div class="stop"><div class="ring2" style="background:var(--gold)">6</div><div class="lbl">Follow-up</div><div class="det">vídeo ou regresso</div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ========== 7. PACKAGES ========== -->
+<section id="pacotes"><div class="wrap">
+  <div class="label">07 — Pacotes</div>
+  <h2>Estrutura de pacotes</h2>
+  <p class="intro">Dois grupos, consoante a motivação: quem precisa de recuperar dentes, e quem quer transformar o sorriso. Todos os preços abaixo são inventados, só para vermos a forma. Os reais saem dos teus honorários mais a minha margem.</p>
+
+  <div class="pgrp">
+    <div class="pgrp-h"><span class="jdot" style="background:var(--flag)"></span>Recuperar — implantes All-on-4 / All-on-6</div>
+    <div class="pk-row">
+      <div class="pk">
+        <div class="tn">Essential</div><div class="pr">€7.900<small> /arcada</small></div><div class="dur">~5 dias · só clínica</div>
+        <ul><li>Implantes 1 arcada + ponte provisória</li><li>Pré-avaliação remota</li><li>Follow-up por vídeo</li><li class="x">Hotel e voos por conta do paciente</li><li class="x">Transfers</li></ul>
+      </div>
+      <div class="pk star">
+        <div class="tn">Complete</div><div class="pr">€14.500<small> /boca</small></div><div class="dur">~7 dias · hotel incluído</div>
+        <ul><li>Boca completa, 2 arcadas</li><li>Hotel 4★ + transfers</li><li>1–2 dias de Lisboa agendados</li><li>Pré-avaliação remota</li><li>Follow-up por vídeo</li></ul>
+      </div>
+      <div class="pk">
+        <div class="tn">Premium</div><div class="pr">€18.900<small> /boca</small></div><div class="dur">~7 dias + regresso</div>
+        <ul><li>Tudo do Complete</li><li>Viagem de regresso para revisão</li><li>Transfers privados</li><li>Itinerário de Lisboa curado</li><li>Gestor de caso dedicado</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="pgrp">
+    <div class="pgrp-h"><span class="jdot" style="background:var(--gold)"></span>Transformar — facetas / Digital Smile Design</div>
+    <div class="pk-row">
+      <div class="pk">
+        <div class="tn">Express</div><div class="pr">€3.200<small> +</small></div><div class="dur">~3 dias · só clínica</div>
+        <ul><li>Consulta DSD + facetas</li><li>Pré-avaliação remota</li><li class="x">Hotel</li><li class="x">Transfers</li></ul>
+      </div>
+      <div class="pk star">
+        <div class="tn">Complete</div><div class="pr">€5.400<small> +</small></div><div class="dur">~5 dias · hotel incluído</div>
+        <ul><li>Facetas + branqueamento + ajuste</li><li>Hotel + transfers</li><li>1 dia livre para Lisboa</li><li>Pré-avaliação remota</li></ul>
+      </div>
+      <div class="pk">
+        <div class="tn">Signature</div><div class="pr">€6.900<small> +</small></div><div class="dur">~5 dias · conteúdo</div>
+        <ul><li>Tudo do Complete</li><li>Sessão fotográfica before/after</li><li>(serve de conteúdo, com consentimento)</li><li>Gestor de caso dedicado</li></ul>
+      </div>
+    </div>
+  </div>
+  <p class="ph-note">Todos os valores são placeholder. A definir com os honorários reais do médico mais a margem de coordenação por tier.</p>
+</div></section>
+
+<!-- ========== 8. COMMUNICATION ========== -->
+<section id="comunicar"><div class="wrap">
+  <div class="label">08 — Comunicação</div>
+  <h2>Como comunicamos, e a quem</h2>
+  <p class="intro">Vive dentro de dentalface.pt, com páginas por língua (EN, FR, DE no mínimo). A entrada principal é uma chamada gratuita, o mesmo gesto que advogados e consultoria B2B usam para baixar a barreira.</p>
+
+  <div class="call-hook">
+    <h3>A chamada gratuita como porta de entrada</h3>
+    <p>"Marque uma chamada gratuita. Sem compromisso, fica só a conhecer. Mostramos-lhe o plano, o preço, e o que pouparia, e decide depois com calma."</p>
+    <p>É o mesmo princípio de muitos advogados e B2B: a primeira conversa não custa nada e não obriga a nada. Tira o medo, cria relação humana com o paciente, e dá-nos a oportunidade de qualificar o caso. Quem agenda uma chamada já está muito mais perto de avançar do que quem só lê uma página.</p>
+    <p class="sml">A chamada substitui o formulário frio como conversão principal. O formulário fica como alternativa para quem prefere escrever.</p>
+  </div>
+
+  <h3 style="margin-bottom:10px">Canais de aquisição</h3>
+  <div class="chan-list">
+    <div class="chan"><h4>Marketplaces dentários</h4><p>~99€/mês + comissão. Canal barato para testar com leads já qualificados, enquanto a marca não tem reviews próprias.</p></div>
+    <div class="chan"><h4>SEO multilíngue</h4><p>Páginas EN/FR/DE dentro de dentalface.pt. Conteúdo que compara Portugal com Turquia e Hungria, onde os pacientes pesquisam.</p></div>
+    <div class="chan"><h4>Google Ads</h4><p>Palavras de alta intenção: "all on 4 portugal cost", "veneers lisbon", quem procura isto já está em fase de decisão.</p></div>
+    <div class="chan"><h4>Before/after social</h4><p>TikTok e Instagram. O conteúdo do pacote Signature alimenta este canal sem custo extra de produção.</p></div>
+  </div>
+
+  <h3 style="margin:26px 0 8px">Assistente de IA no site</h3>
+  <p>Faz sentido como primeiro filtro, disponível a qualquer hora e em qualquer língua. Responde a dúvidas, recolhe o motivo e as fotos, e encaminha para a chamada gratuita. Nunca dá diagnóstico clínico, isso é sempre do médico. Reduz carga da equipa e capta quem chega fora de horas.</p>
+
+  <h3 style="margin:22px 0 8px">Quando lançar</h3>
+  <p>Só depois de três coisas estarem prontas: o protocolo de follow-up definido pelo médico, os preços fixos fechados, e a primeira versão multilíngue do site. Lançar sem isto é arriscar a reputação logo no primeiro caso, e neste negócio a reputação é tudo.</p>
+</div></section>
+
+
+<!-- ========== 9. OUR COSTS ========== -->
+<section id="custos"><div class="wrap">
+  <div class="label">09 — O que vamos pagar</div>
+  <h2>Custos da operação (só do nosso lado)</h2>
+  <p class="intro">Para perceber a margem real, há que saber o que sai. Isto cobre apenas a operação de marketing e logística. Ignora qualquer custo da clínica em si. Valores ilustrativos, mensais ou pontuais.</p>
+  <div class="scroll-x">
+    <table class="cost-table">
+      <thead><tr><th>Item</th><th>O que é</th><th>Tipo</th><th>Custo estimado</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Domínio + secção no site</strong></td><td>Já existe dentalface.pt; só estendemos</td><td><span class="badge-1x">arranque</span></td><td class="num">~baixo</td></tr>
+        <tr><td><strong>Desenvolvimento</strong></td><td>Páginas multilíngue, formulário, agendamento</td><td><span class="badge-1x">arranque</span></td><td class="num">o meu tempo</td></tr>
+        <tr><td><strong>Tradução profissional</strong></td><td>EN/FR/DE feitos por humano, não máquina</td><td><span class="badge-1x">arranque</span></td><td class="num">€ por palavra</td></tr>
+        <tr><td><strong>Assistente de IA (API)</strong></td><td>Chamadas à API por cada conversa no site</td><td><span class="badge-rec">recorrente</span></td><td class="num">~cêntimos/conversa</td></tr>
+        <tr><td><strong>Marketplaces dentários</strong></td><td>Listagem + comissão por caso reservado</td><td><span class="badge-rec">recorrente</span></td><td class="num">~€99/mês +15%</td></tr>
+        <tr><td><strong>Google / Meta Ads</strong></td><td>Aquisição paga de tráfego qualificado</td><td><span class="badge-rec">recorrente</span></td><td class="num">orçamento a definir</td></tr>
+        <tr><td><strong>Advogado (RGPD + responsabilidade)</strong></td><td>Contratos, política de dados, termos</td><td><span class="badge-1x">arranque</span></td><td class="num">€ pontual</td></tr>
+        <tr><td><strong>Ferramenta de gestão / CRM</strong></td><td>Rastrear pacientes, origem, estado, valor</td><td><span class="badge-rec">recorrente</span></td><td class="num">~baixo ou grátis</td></tr>
+        <tr><td><strong>Fotografia before/after</strong></td><td>Conteúdo para social e site (pacote Signature)</td><td><span class="badge-rec">por caso</span></td><td class="num">€ por sessão</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:13px;color:var(--muted);margin-top:14px">A maioria do custo de arranque é o meu tempo mais a tradução e o advogado. O recorrente real só começa a pesar quando ligamos os anúncios, e isso só fazemos depois de validar com os primeiros casos.</p>
+</div></section>
+
+<!-- ========== 10. EXTERNAL HELP ========== -->
+<section id="externos"><div class="wrap">
+  <div class="label">10 — Ajuda externa</div>
+  <h2>Onde vamos precisar de gente de fora</h2>
+  <p class="intro">Há coisas que não devemos fazer sozinhos. Identificá-las agora evita problemas caros mais à frente.</p>
+  <div class="help-row">
+    <div class="help"><h4>Advogado · RGPD e dados de saúde</h4><div class="when">antes de captar leads</div><p>O site recebe raio-X e dados médicos. São dados sensíveis sob RGPD. O formulário e o armazenamento têm de ser conformes desde o início.</p></div>
+    <div class="help"><h4>Advogado · responsabilidade transfronteiriça</h4><div class="when">antes de tratar</div><p>Quem responde se um tratamento falha depois do paciente regressar a casa, e como está coberto o modelo de comissão ou pacote.</p></div>
+    <div class="help"><h4>Tradutor profissional</h4><div class="when">antes de lançar</div><p>EN, FR e DE feitos por humano. Tradução automática num site de saúde transmite amadorismo e mata a confiança que estamos a tentar construir.</p></div>
+    <div class="help"><h4>Contabilista</h4><div class="when">ao definir o modelo</div><p>Como estruturar a minha receita (comissão vs pacote), faturação e impostos, de forma limpa para os dois lados.</p></div>
+  </div>
+</div></section>
+
+<!-- ========== 11. RISKS ========== -->
+<section id="riscos" class="risk-wrap"><div class="wrap">
+  <div class="label" style="color:var(--flag)">11 — Pontos cegos</div>
+  <h2 style="color:var(--flag)">Riscos a resolver antes de avançar</h2>
+  <p class="intro">Leva isto à nossa conversa. São os pontos que afundam operações de turismo dentário se ficarem por resolver. Cada um tem a pergunta concreta a fazer.</p>
+  <div class="risk-grid">
+    <div class="risk"><h4>Responsabilidade transfronteiriça <span class="sev">crítico</span></h4><p>Quem responde se um tratamento falha depois do paciente voltar para casa? É o maior risco de todos.</p><div class="ask"><b>Perguntar:</b> o seguro da Dental Face cobre estrangeiros? Há contrato de tratamento por escrito?</div></div>
+    <div class="risk"><h4>Seleção médica do paciente <span class="sev">segurança</span></h4><p>Nem todo o paciente é candidato seguro à distância. Rejeitar casos errados protege a reputação do médico.</p><div class="ask"><b>Definir:</b> critérios de exclusão claros na triagem. O "não" é um ativo.</div></div>
+    <div class="risk"><h4>Pagamentos e depósitos <span class="sev">operacional</span></h4><p>Pagamentos internacionais, moeda, e reembolso se o paciente cancela ou é rejeitado depois do depósito.</p><div class="ask"><b>Definir:</b> percentagem de depósito, condições de reembolso, gateway.</div></div>
+    <div class="risk"><h4>Capacidade e canibalização <span class="sev">estratégia</span></h4><p>Cada paciente de turismo ocupa uma cadeira de um paciente local. Há um teto real de capacidade?</p><div class="ask"><b>Perguntar:</b> o médico quer volume, ou poucos casos selecionados de alta margem?</div></div>
+    <div class="risk"><h4>O meu papel e remuneração <span class="sev">acordo</span></h4><p>Comissão, pacote, ou avença? Quem é dono da marca e do site? Fechar antes de eu investir tempo.</p><div class="ask"><b>Acordar:</b> modelo de receita, percentagem, e propriedade do projeto, por escrito.</div></div>
+    <div class="risk"><h4>RGPD / dados de saúde <span class="sev">legal</span></h4><p>Pacientes enviam raio-X e dados médicos pelo site. São dados sensíveis sob RGPD.</p><div class="ask"><b>Garantir:</b> formulário e armazenamento conformes, com apoio jurídico.</div></div>
+  </div>
+</div></section>
+
+<!-- ========== 12. CRITIQUE ========== -->
+<section><div class="wrap">
+  <div class="label">12 — O que me preocupa</div>
+  <h2>Sendo crítico com a minha própria ideia</h2>
+  <p class="intro">Antes de te entusiasmares, aqui está o que acho que pode correr mal ou que ainda não sei responder. Prefiro pôr isto em cima da mesa agora.</p>
+  <div class="critique">
+    <h3>As perguntas que ainda não tenho resposta</h3>
+
+    <div class="q">Estamos a entrar tarde?</div>
+    <p>O IAD faz isto desde 2015 e tem reviews acumuladas que nós não temos. As plataformas dominam a pesquisa. Vamos precisar de paciência e dos primeiros casos antes de qualquer escala. Isto não dá dinheiro rápido.</p>
+
+    <div class="q">E se a clínica não quiser volume?</div>
+    <p>Todo o plano assume que há cadeiras disponíveis para internacionais. Se o médico já está cheio com pacientes locais, ou só quer poucos casos premium, o modelo muda por completo. Preciso de saber isto dele logo no início.</p>
+
+    <div class="q">Eu dependo inteiramente de um médico</div>
+    <p>O argumento todo é "o médico de renome". Se ele sair, adoecer, ou mudar de ideias, eu não tenho negócio. Vale a pena pensar se isto é à volta dele, ou à volta da clínica.</p>
+
+    <div class="q">Um único caso mau pode matar tudo</div>
+    <p>O fenómeno "Turkey teeth" mostra como um punhado de maus resultados destrói a confiança num destino inteiro. Nós não temos margem para erros públicos no arranque. Isso obriga-nos a ser seletivos, o que abranda o crescimento.</p>
+
+    <div class="q">A minha margem está na viagem, e qualquer um pode tratar disso</div>
+    <p>Se ganho na coordenação de hotel e transfers, isso é facilmente replicável e tem margem fina. Tenho de pensar se o meu valor real não está antes na captação e na confiança, mais do que na logística.</p>
+
+    <div class="q">O que é que eu não estou a ver?</div>
+    <p>Esta é a pergunta mais honesta. Tu conheces o lado clínico e o mercado português melhor do que eu. Onde é que este plano é ingénuo? É exatamente isso que quero que me digas quando falarmos.</p>
+  </div>
+</div></section>
+
+<!-- ========== 13. STEPS ========== -->
+<section id="passos"><div class="wrap">
+  <div class="label">13 — Próximos passos</div>
+  <h2>O que fazemos a seguir, por ordem</h2>
+  <p class="intro">Sequência de execução. Quem lidera cada passo está marcado. Os primeiros são todos conversa e decisão; o investimento real só vem depois.</p>
+  <div class="steps">
+    <div class="step-i"><div class="rail"><div class="node">1</div><div class="vline"></div></div><div class="step-body"><h4>Falar sobre o modelo e a minha remuneração</h4><p>Comissão ou pacote, a minha percentagem, e quem é dono do projeto. Sem isto fechado, não avanço.</p><span class="owner o-b">Ambos</span></div></div>
+    <div class="step-i"><div class="rail"><div class="node">2</div><div class="vline"></div></div><div class="step-body"><h4>Decidir foco de procedimentos e capacidade</h4><p>Em qual jornada o médico é mais forte, e quantos casos internacionais a clínica aguenta sem prejudicar os locais.</p><span class="owner o-d">Dentista</span></div></div>
+    <div class="step-i"><div class="rail"><div class="node">3</div><div class="vline"></div></div><div class="step-body"><h4>Resolver os pontos cegos da secção 11</h4><p>Responsabilidade, seleção de pacientes, RGPD, pagamentos. Conversa-chave com advogado antes de qualquer euro investido.</p><span class="owner o-b">Ambos</span></div></div>
+    <div class="step-i"><div class="rail"><div class="node">4</div><div class="vline"></div></div><div class="step-body"><h4>Definir o protocolo de follow-up</h4><p>Precisa do input clínico dele, não é copy de marketing. É um diferenciador que afirmamos no site.</p><span class="owner o-d">Dentista</span></div></div>
+    <div class="step-i"><div class="rail"><div class="node">5</div><div class="vline"></div></div><div class="step-body"><h4>Fixar os preços dos pacotes</h4><p>Honorário clínico mais a minha margem de coordenação, por tier. Substituir os placeholders por números reais.</p><span class="owner o-b">Ambos</span></div></div>
+    <div class="step-i"><div class="rail"><div class="node">6</div><div class="vline"></div></div><div class="step-body"><h4>Construir a secção multilíngue em dentalface.pt</h4><p>EN/FR/DE, chamada gratuita como conversão, formulário conforme RGPD, páginas de pacotes, before/after, política de follow-up.</p><span class="owner o-y">Eu</span></div></div>
+    <div class="step-i"><div class="rail"><div class="node">7</div><div class="vline"></div></div><div class="step-body"><h4>Montar assistente de IA e automação</h4><p>Filtro 24/7 que encaminha para a chamada, e o fluxo lead → triagem → orçamento → logística.</p><span class="owner o-y">Eu</span></div></div>
+    <div class="step-i"><div class="rail"><div class="node">8</div><div class="vline"></div></div><div class="step-body"><h4>Listar em 1 ou 2 marketplaces e recolher os primeiros casos</h4><p>Canal barato para arrancar com leads qualificados. Os primeiros 3 a 5 casos, com consentimento, geram as reviews e os before/after que depois movem tudo. Só então escalamos anúncios.</p><span class="owner o-b">Ambos</span></div></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="legend">
+    <span><i style="background:var(--mist)"></i> Dentista lidera</span>
+    <span><i style="background:var(--flag-bg)"></i> Eu lidero</span>
+    <span><i style="background:var(--gold-soft)"></i> Ambos</span>
+  </div>
+  <div class="fin">Turismo Dentário · Dental Face Lisboa — documento de trabalho. Todos os preços e números são ilustrativos, a confirmar.</div>
+</div></footer>
+
+</body>
+</html>
